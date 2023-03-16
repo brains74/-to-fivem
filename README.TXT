@@ -1,11 +1,10 @@
-DISCORD:https://discord.gg/4j8KVmpTax
+DISCORD:
 
-This is a lttle gide on how to change things from dollars to pounds (QBCORE only)
+Questa è una piccola idea su come cambiare il simbolo dei dollari in euro (solo QBCORE)
 
-For paychecks go to [qb]/qb-core/locale/en.lua >>> line 17 >>> Receive_Paycheck is the event 
-then go to line 17 and at the end it will have a $ change it to £ 
+Per le buste paga vai su [qb]/qb-core/locale/en.lua >>> riga 17 >>> Receive_Paycheck alla fine troverai un $ cambialo in €
 
---For inventroy go to app.json and replace whole file with 
+--Per inventroy vai su app.json e sostituisci l'intero file con
 
 var InventoryOption = "0, 0, 0";
 var totalWeight = 0;
@@ -558,14 +557,14 @@ function FormatItemInfo(itemData) {
         } else if (itemData.name == "moneybag") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
-                "<p><strong>Amount of cash: </strong><span>£" +
+                "<p><strong>Amount of cash: </strong><span>€" +
                 itemData.info.cash +
                 "</span></p>"
             );
         } else if (itemData.name == "markedbills") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
-                "<p><strong>Worth: </strong><span>£" +
+                "<p><strong>Worth: </strong><span>€" +
                 itemData.info.worth +
                 "</span></p>"
             );
@@ -611,7 +610,7 @@ function handleDragDrop() {
                     $(this).find(".item-slot-amount p").html("0 (0.0)");
                     $(".ui-draggable-dragging")
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") £" + itemData.price);
+                        .html("(" + itemData.amount + ") €" + itemData.price);
                     $(".ui-draggable-dragging").find(".item-slot-key").remove();
                     if ($(this).parent().attr("data-inventory") == "hotbar") {
                     }
@@ -633,7 +632,7 @@ function handleDragDrop() {
                 if (itemData.price != null) {
                     $(this)
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") £" + itemData.price);
+                        .html("(" + itemData.amount + ") €" + itemData.price);
                     if ($(this).parent().attr("data-inventory") == "hotbar") {
                     }
                 } else {
@@ -653,10 +652,10 @@ function handleDragDrop() {
                 if (itemData.price != null) {
                     $(this)
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") £" + itemData.price);
+                        .html("(" + itemData.amount + ") €" + itemData.price);
                     $(".ui-draggable-dragging")
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") £" + itemData.price);
+                        .html("(" + itemData.amount + ") €" + itemData.price);
                     $(".ui-draggable-dragging").find(".item-slot-key").remove();
                     if ($(this).parent().attr("data-inventory") == "hotbar") {
                     }
@@ -823,7 +822,7 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     itemData.name +
                     '" /></div><div class="item-slot-amount"><p>(' +
                     itemData.amount +
-                    ") £" +
+                    ") €" +
                     itemData.price +
                     '</p></div><div class="item-slot-label"><p>' +
                     itemData.label +
@@ -867,7 +866,7 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     itemData.name +
                     '" /></div><div class="item-slot-amount"><p>(' +
                     itemData.amount +
-                    ") £" +
+                    ") €" +
                     itemData.price +
                     '</p></div><div class="item-slot-label"><p>' +
                     itemData.label +
@@ -910,7 +909,7 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     itemData.name +
                     '" /></div><div class="item-slot-amount"><p>(' +
                     itemData.amount +
-                    ") £" +
+                    ") €" +
                     itemData.price +
                     '</p></div><div class="item-slot-label"><p>' +
                     itemData.label +
@@ -1454,7 +1453,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newDataFrom.name +
                             '" /></div><div class="item-slot-amount"><p>(' +
                             newDataFrom.amount +
-                            ") £" +
+                            ") €" +
                             newDataFrom.price +
                             '</p></div><div class="item-slot-label"><p>' +
                             newDataFrom.label +
@@ -2028,7 +2027,7 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newDataFrom.name +
                             '" /></div><div class="item-slot-amount"><p>(' +
                             newDataFrom.amount +
-                            ") £" +
+                            ") €" +
                             newDataFrom.price +
                             '</p></div><div class="item-slot-label"><p>' +
                             newDataFrom.label +
@@ -2487,7 +2486,7 @@ var requiredItemOpen = false;
                                 item.name +
                                 '" /></div><div class="item-slot-amount"><p>(' +
                                 item.amount +
-                                ") £" +
+                                ") €" +
                                 item.price +
                                 "</p></div>" +
                                 ItemLabel
